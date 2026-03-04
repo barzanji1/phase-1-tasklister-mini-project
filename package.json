@@ -4,11 +4,12 @@
   "description": "One list, many tasks. Create a todo list in vanilla JS",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha --timeout 5000 --reporter spec"
+    "pretest": "node scripts/codegrade-pretest.js",
+    "test": "mocha \"test/**/*.js\" --timeout 5000 --reporter mocha-multi --reporter-options \"spec=-,mocha-junit-reporter=test-results.xml\""
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:learn-co-curriculum/js-task-lister-project.git"
+    "url": "git+ssh://git@github.com/learn-co-curriculum/js-task-lister-project.git"
   },
   "keywords": [
     "learn",
@@ -29,6 +30,7 @@
     "chai": "^4.3.8",
     "jsdom": "^22.1.0",
     "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0",
     "mocha-multi": "^1.1.3"
   }
 }
